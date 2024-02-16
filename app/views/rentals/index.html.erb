@@ -1,0 +1,43 @@
+<div class="content">
+    <h2 class="content-title">Rental Transactions</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Car</th>
+                <th>Customer</th>
+                <th>Start Date</th>
+                <th>Return Date</th>
+                <th class="actions">Actions</th>
+            </tr>
+        </thead>
+
+        <tbody>
+        <% @rentals.each do |rental| %>
+            <tr>
+                <td><%= rental.id %></td>
+                <td><%= rental.car.try(:car_name) %></td>
+                <td><%= rental.customer.try(:full_name) %></td>
+                <td><%= rental.start_date %></td>
+                <td><%= rental.end_date %></td>
+                <td class="actions">
+                    <%= link_to 'Show', rental_path(rental) %>
+                    <%= link_to 'Edit', edit_rental_path(rental) %>
+                    <%= link_to 'Delete', delete_rental_path(rental) %>
+                </td>
+            </tr>
+        
+        <% end %>
+        </tbody>
+    </table>
+
+    <br> 
+
+    <div class="button">
+        <%= link_to 'Add New Transaction', new_rental_path %>
+    </div>
+
+</div>
+
+

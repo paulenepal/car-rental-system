@@ -1,5 +1,5 @@
 class RentalsController < ApplicationController
-    before_action :set_rental, only: [:show, :edit, :update, :delete, :destory]
+    before_action :set_rental, only: [:show, :edit, :update, :delete, :destroy]
 
     def index
         @rentals = Rental.all.order(:created_at)
@@ -15,7 +15,7 @@ class RentalsController < ApplicationController
     def create
         @rental = Rental.new(rental_params)
         if @rental.save
-            redirect to rentals_path, notice: "Rental No. #{@rental.id} was successfully added."
+            redirect_to rentals_path, notice: "Rental No. #{@rental.id} was successfully added."
         else
             render :new
         end
@@ -25,8 +25,8 @@ class RentalsController < ApplicationController
     end
 
     def update
-        if @rentals.update(rental_params)
-            redirect_to rental_path(@article), notice: "Rental No. #{@rental.id} was succesfully updated."
+        if @rental.update(rental_params)
+            redirect_to rental_path(@rental), notice: "Rental No. #{@rental.id} was succesfully updated."
         else
             render :edit
         end
@@ -35,15 +35,15 @@ class RentalsController < ApplicationController
     def delete
     end
 
-    def destory
-        @rental.destory
-        redirect_to rentals_path, notice: "Rental No. #{@rental.id} was successfull destroyed."
+    def destroy
+        @rental.destroy
+        redirect_to rentals_path, notice: "Rental No. #{@rental.id} was successfull removed."
     end
 
     private
 
     def rental_params
-        params.require(:rental).permit(:car_id, :customer_id :start_date, :end_date)
+        params.require(:rental).permit(:car_id, :customer_id, :start_date, :end_date)
     end
 
     def set_rental

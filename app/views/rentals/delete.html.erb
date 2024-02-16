@@ -1,0 +1,16 @@
+<div class="content">
+    <h2 class="content-title">Remove a Rental Transaction</h2>
+
+    <%= form_for(@rental, method: 'delete', url: rental_path(@rental)) do |form| %>
+
+        <p><%= "Are you sure you want to permanently remove Rental No. #{@rental.id}?" %></p>
+        <br>
+
+        <div class="button">
+            <%= form.submit "Remove", class: "button" %> 
+            <%= link_to 'Back to Rentals', rentals_path %>
+        </div>
+
+    <% end %><br>
+
+</div>

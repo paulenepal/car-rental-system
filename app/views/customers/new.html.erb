@@ -1,11 +1,11 @@
-<h1 class="customer-title"> Add a New Customer </h1>
+<div class="content">
+    <h2 class="content-title"> Add a New Customer </h2>
 
-<%= render "form", customer: @customer %>
+    <%= render "form", customer: @customer %>
 
-<br>
+    <br>
 
-<div class="button">
-    <%= link_to 'Cars', cars_path %> <span>|</span>
-    <%= link_to 'Customers', customers_path %> <span>|</span>
-    <%= link_to 'Rentals', rentals_path %>
+    <div class="button">
+        <%= link_to 'Back to Customer List', customers_path %>
+    </div>
 </div>

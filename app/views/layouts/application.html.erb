@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CarRentalSystem</title>
+    <title>Car Rental System</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,6 +11,41 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header id="header">
+      <%= image_tag('logo.png', class: 'logo') %>
+      <nav id="topnav">
+        <span><%= link_to 'CARS', cars_path %></span>
+        <span><%= link_to 'CUSTOMERS', customers_path %></span>
+        <span><%= link_to 'RENTALS', rentals_path %></span>
+        <span>Welcome, Admin!</span>
+      </nav>
+    </header>
+
+    <div id="container">
+      <section class="main-box1">
+        <div id="title">
+          <h1>Toyota Yaris Cross</h1>
+          <h3>Electrify Your <span>Passions</span></h3>
+        </div>
+        <div id="description">
+          <%= image_tag('yar.png', class: 'img') %>
+          <%= image_tag('yar2.png', class: 'img2') %>
+          <p class="desc1">PROVIDING <span>SUSTAINABILITY</span> 
+            AND <span>VERSATILITY</span> IN ONE <strong>SUBCOMPACT SUV</strong></p>
+        </div>
+      </section>
+
+      <section class="main-box2">
+        <section class="header">
+          <div id="title2">
+            <h2>Car Rental <span>Services</span></h2>
+          </div>
+        </section>
+
+        <section class="content-box">
+          <%= yield %>
+        </section>
+      </section>
+
   </body>
 </html>

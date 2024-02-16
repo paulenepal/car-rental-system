@@ -1,0 +1,39 @@
+<%= form_with(model: rental) do |form| %>
+    <% if @rental.errors.any? %>
+        <div style="color: red">
+            <h2>
+                <%= pluralize(@rental.errors.count, "error")%> prohibited from being saved:
+            </h2>
+
+            <ul>
+                <% @rental.errors.each do |error| %>
+                    <li><%=error.full_message %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
+
+    <p>
+        <%= form.label :car_id %><br>
+        <%= form.collection_select :car_id, Car.all, :id, :car_name, { prompt: "Select Car" }, { class: 'select'} %>
+    </p>
+
+    <p>
+        <%= form.label :customer_id %><br>
+        <%= form.collection_select :customer_id, Customer.all, :id, :full_name, { prompt: "Select Customer" }, { class: 'select' } %>
+    </p>
+
+    <p>
+        <%= form.label :start_date %><br>
+        <%= form.date_select :start_date, class: "date" %>
+    </p>
+
+    <p>
+        <%= form.label :end_date, "Return Date" %><br>
+        <%= form.date_select :end_date, class: "date" %>
+    </p>
+
+    <p>
+        <%= form.submit "Submit" %>
+    </p>
+<% end %>

@@ -1,0 +1,40 @@
+<div class="content">
+
+    <h3 class="notice"><%= notice %></h3>
+    <h2 class="content-title">Rental Transaction No. <%= @rental.id %></h2>
+
+    <table>
+        <tr>
+            <th> Car Make/Model </th>
+            <td> <%= @rental.car.try(:car_name) %> </td>
+        </tr>
+        <tr>
+            <th> Customer Name </th>
+            <td> <%= @rental.customer.try(:full_name) %> </td>
+        </tr>
+        <tr>
+            <th> Start Date </th>
+            <td> <%= @rental.start_date %> </td>
+        </tr>
+        <tr>
+            <th> Return Date </th>
+            <td> <%= @rental.end_date %> </td>
+        </tr>
+        <tr>
+            <th> Created at </th>
+            <td> <%= @rental.created_at %> </td>
+        </tr>
+        <tr>
+            <th> Actions </th>
+            <td>
+                <%= link_to 'Edit', edit_rental_path %>
+                <%= link_to 'Delete', delete_rental_path %>
+            </td>
+        </tr>
+    </table> <br>
+
+    <div class="button">
+        <%= link_to 'Back to Rentals', rentals_path %>
+    </div>
+
+</div>

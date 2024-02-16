@@ -1,42 +1,44 @@
-<h1 class="customer-title">Customers</h1>
+<div class="content">
 
-<table>
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Full Name</th>
-            <th>Email</th>
-            <th>Address</th>
-            <th>Contact Number</th>
-            <th class="actions">Actions</th>
-        </tr>
-    </thead>
+    <h3 class="notice"><%= notice %></h3>
+    <h2 class="content-title">Customer List</h2>
 
-    <tbody>
-    <% @customers.each do |customer| %>
-        <tr>
-            <td><%= customer.id %></td>
-            <td><%= customer.full_name %></td>
-            <td><%= customer.email %></td>
-            <td><%= customer.address %></td>
-            <td><%= customer.contact_number %></td>
-            <td class="actions">
-                <%= link_to 'Show', customer_path(customer) %>
-                <%= link_to 'Edit', edit_customer_path(customer) %>
-                <%= link_to 'Delete', delete_customer_path(customer) %>
-            </td>
-        </tr>
-    
-    <% end %>
-    </tbody>
-</table>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Contact Number</th>
+                <th class="actions">Actions</th>
+            </tr>
+        </thead>
 
-<br> 
+        <tbody>
+        <% @customers.each do |customer| %>
+            <tr>
+                <td><%= customer.id %></td>
+                <td><%= customer.full_name %></td>
+                <td><%= customer.email %></td>
+                <td><%= customer.address %></td>
+                <td><%= customer.contact_number %></td>
+                <td class="actions">
+                    <%= link_to 'Show', customer_path(customer) %>
+                    <%= link_to 'Edit', edit_customer_path(customer) %>
+                    <%= link_to 'Delete', delete_customer_path(customer) %>
+                </td>
+            </tr>
+        
+        <% end %>
+        </tbody>
+    </table>
 
-<div class="button">
-    <%= link_to 'Add a New Customer', new_customer_path %> <span>|</span>
-    <%= link_to 'Cars', cars_path %> <span>|</span>
-    <%= link_to 'Rentals', rentals_path %>
+    <br> 
+
+    <div class="button">
+        <%= link_to 'Add New Customer', new_customer_path %>
+    </div>
 </div>
 
 

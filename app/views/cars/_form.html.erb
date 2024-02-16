@@ -1,0 +1,34 @@
+<%= form_with(model: car) do |form| %>
+    <% if @car.errors.any? %>
+        <div style="color: red">
+            <h2>
+                <%= pluralize(@car.errors.count, "error")%> prohibited from being saved:
+            </h2>
+
+            <ul>
+                <% @car.errors.each do |error| %>
+                    <li><%=error.full_message %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
+
+    <p>
+        <%= form.label :make %><br>
+        <%= form.text_field :make %>
+    </p>
+
+    <p>
+        <%= form.label :model %><br>
+        <%= form.text_field :model %>
+    </p>
+
+    <p>
+        <%= form.label "Plate Number" %><br>
+        <%= form.text_field :plate_number %>
+    </p>
+
+    <p>
+        <%= form.submit "Submit" %>
+    </p>
+<% end %>

@@ -1,0 +1,18 @@
+<h2 class="customer-title">Remove a Customer</h2>
+
+<%= form_for(@customer, method: 'delete', url: customer_path(@customer)) do |form| %>
+
+    <p><%= "Are you sure you want to permanently destroy this customer #{@customer.full_name}?" %></p>
+    <br>
+
+    <div>
+        <%= form.submit "Remove Customer" %>
+    </div>
+
+<% end %><br>
+
+<div class="button">
+    <%= link_to 'Cars', cars_path %> <span>|</span>
+    <%= link_to 'Customers', customers_path %> <span>|</span>
+    <%= link_to 'Rentals', rentals_path %>
+</div>

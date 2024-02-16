@@ -1,0 +1,42 @@
+<h1 class="customer-title">Customers</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Contact Number</th>
+            <th class="actions">Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+    <% @customers.each do |customer| %>
+        <tr>
+            <td><%= customer.id %></td>
+            <td><%= customer.full_name %></td>
+            <td><%= customer.email %></td>
+            <td><%= customer.address %></td>
+            <td><%= customer.contact_number %></td>
+            <td class="actions">
+                <%= link_to 'Show', customer_path(customer) %>
+                <%= link_to 'Edit', edit_customer_path(customer) %>
+                <%= link_to 'Delete', delete_customer_path(customer) %>
+            </td>
+        </tr>
+    
+    <% end %>
+    </tbody>
+</table>
+
+<br> 
+
+<div class="button">
+    <%= link_to 'Add a New Customer', new_customer_path %> <span>|</span>
+    <%= link_to 'Cars', cars_path %> <span>|</span>
+    <%= link_to 'Rentals', rentals_path %>
+</div>
+
+

@@ -1,0 +1,40 @@
+<h1 class="car-title">Cars</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Make</th>
+            <th>Car Model</th>
+            <th>Plate Number</th>
+            <th class="actions">Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+    <% @cars.each do |car| %>
+        <tr>
+            <td><%= car.id %></td>
+            <td><%= car.make %></td>
+            <td><%= car.model %></td>
+            <td><%= car.plate_number %></td>
+            <td class="actions">
+                <%= link_to 'Show', car_path(car) %>
+                <%= link_to 'Edit', edit_car_path(car) %>
+                <%= link_to 'Delete', delete_car_path(car) %>
+            </td>
+        </tr>
+    
+    <% end %>
+    </tbody>
+</table>
+
+<br> 
+
+<div class="button">
+    <%= link_to 'Add a New Car', new_car_path %> <span>|</span>
+    <%= link_to 'Customers', customers_path %> <span>|</span>
+    <%= link_to 'Rentals', rentals_path %>
+</div>
+
+

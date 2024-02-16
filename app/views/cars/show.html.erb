@@ -1,0 +1,35 @@
+<h3><%= notice %></h3>
+
+<h2 class="car-title">Car No. <%= @car.id %></h2>
+
+<table>
+    <tr>
+        <th> Car Make </th>
+        <td> <%= @car.make %> </td>
+    </tr>
+    <tr>
+        <th> Car Model </th>
+        <td> <%= @car.model %> </td>
+    </tr>
+    <tr>
+        <th> Plate Number </th>
+        <td> <%= @car.plate_number %> </td>
+    </tr>
+    <tr>
+        <th> Created at </th>
+        <td> <%= @car.created_at %> </td>
+    </tr>
+    <tr>
+        <th> Actions </th>
+        <td>
+            <%= link_to 'Edit', edit_car_path %>
+            <%= link_to 'Delete', delete_car_path %>
+        </td>
+    </tr>
+</table> <br>
+
+<div class="button">
+    <%= link_to 'Cars', cars_path %> <span>|</span>
+    <%= link_to 'Customers', customers_path %> <span>|</span>
+    <%= link_to 'Rentals', rentals_path %>
+</div>

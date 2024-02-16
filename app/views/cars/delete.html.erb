@@ -1,0 +1,18 @@
+<h2 class="car-title">Destroy Car</h2>
+
+<%= form_for(@car, method: 'delete', url: car_path(@car)) do |form| %>
+
+    <p>Are you sure you want to permanently destroy this car?</p>
+    <p> <%= "#{@car.make} #{@car.model} with Plate Number: #{@car.plate_number}" %> </p><br>
+
+    <div>
+        <%= form.submit "Destroy Car" %>
+    </div>
+
+<% end %><br>
+
+<div class="button">
+    <%= link_to 'Cars', cars_path %> <span>|</span>
+    <%= link_to 'Customers', customers_path %> <span>|</span>
+    <%= link_to 'Rentals', rentals_path %>
+</div>

@@ -1,0 +1,11 @@
+<h1 class="car-title"> Add a New Car </h1>
+
+<%= render "form", car: @car %>
+
+<br>
+
+<div class="button">
+    <%= link_to 'Cars', cars_path %> <span>|</span>
+    <%= link_to 'Customers', customers_path %> <span>|</span>
+    <%= link_to 'Rentals', rentals_path %>
+</div>

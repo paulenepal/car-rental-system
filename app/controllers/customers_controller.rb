@@ -15,7 +15,7 @@ class CustomersController < ApplicationController
     def create
         @customer = Customer.new(customer_params)
         if @customer.save
-            redirect_to customers_path, notice: "Customer was successfully added."
+            redirect_to customers_path, notice: "Successfully added a customer."
         else
             render :new
         end
@@ -26,7 +26,7 @@ class CustomersController < ApplicationController
 
     def update
         if @customer.update(customer_params)
-            redirect_to customer_path(@customer), notice: "Customer was succesfully updated"
+            redirect_to customer_path(@customer), notice: "Successfully updated customer details."
         else
             render :edit
         end
@@ -37,7 +37,7 @@ class CustomersController < ApplicationController
 
     def destroy
         @customer.destroy
-        redirect_to customers_path
+        redirect_to customers_path, notice: "Successfully removed a customer."
     end
 
     private

@@ -33,7 +33,7 @@
         <%= form.date_select :end_date, class: "date" %>
     </p>
 
-    <p>
-        <%= form.submit "Submit" %>
-    </p>
+    <div class="button">
+        <%= form.submit "Submit" %> <%= link_to 'Back to Rentals', rentals_path %>
+    </div>
 <% end %>

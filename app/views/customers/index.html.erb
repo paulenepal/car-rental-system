@@ -1,12 +1,13 @@
 <div class="content">
 
     <h3 class="notice"><%= notice %></h3>
-    <h2 class="content-title">Customer List</h2>
+    <h2 class="content-title">Customer List</h2><br>
 
     <table>
         <thead>
             <tr>
-                <th>ID</th>
+                <th class="actions" >Info</th>
+                <th class="actions">ID</th>
                 <th>Full Name</th>
                 <th>Email</th>
                 <th>Address</th>
@@ -18,15 +19,23 @@
         <tbody>
         <% @customers.each do |customer| %>
             <tr>
-                <td><%= customer.id %></td>
+                <td class="actions">
+                    <%= link_to customer_path(customer) do %>
+                        <i class="fa-solid fa-bars" style="color: #1B4242;"></i>
+                    <% end %>
+                </td>
+                <td class="actions"><%= customer.id %></td>
                 <td><%= customer.full_name %></td>
-                <td><%= customer.email %></td>
-                <td><%= customer.address %></td>
+                <td><%= truncate(customer.email, length: 10) %></td>
+                <td><%= truncate(customer.address, length: 9) %></td>
                 <td><%= customer.contact_number %></td>
                 <td class="actions">
-                    <%= link_to 'Show', customer_path(customer) %>
-                    <%= link_to 'Edit', edit_customer_path(customer) %>
-                    <%= link_to 'Delete', delete_customer_path(customer) %>
+                    <%= link_to edit_customer_path(customer) do %>
+                        <i class="fa-solid fa-pen-to-square" style="color: #5C8374;"></i>
+                    <% end %>
+                    <%= link_to delete_customer_path(customer) do %>
+                        <i class="fa-solid fa-delete-left" style="color: #9b031f;"></i>
+                    <% end %>
                 </td>
             </tr>
         

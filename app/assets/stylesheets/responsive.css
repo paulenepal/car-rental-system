@@ -1,0 +1,72 @@
+@media only screen and (min-width: 768px) and (max-width: 998px) {
+    label.logo {
+        color: white;
+        font-size: 25px;
+        line-height: 80px;
+        padding: 0 60px;
+        font-weight: 700;
+    }
+
+    nav ul {
+        float: right;
+        margin-right: 40px;
+    }
+
+    nav ul li {
+        display: inline-block;
+        line-height: 80px;
+        margin: 0 10px;
+        font-size: 14px;
+        font-weight: 500;
+        color: black;
+    }
+    
+    nav ul li a {
+        font-size: 17px;
+        color: black;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    #title h1 {
+        font-size: 40px;
+        margin-top: 20px;
+      }
+
+    #title2 h2 {
+        font-size: 30px;
+        text-align: center;
+        margin-top: 20px;
+      }
+
+    .container {
+        display: flex;
+        flex-direction: column-reverse;
+        width: 100%;
+        margin-top: 20px;
+        justify-content: center;
+        align-items: center;
+        /* outline: 1px solid red; */
+    }
+
+    .main-box1 {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        justify-content: center;
+    }
+
+    .main-box2 {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        justify-content: center;
+    }
+}

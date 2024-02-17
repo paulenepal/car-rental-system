@@ -1,7 +1,7 @@
 <div class="content">
 
     <h3 class="notice"><%= notice %></h3>
-    <h2 class="customer-title">Customer No. <%= @customer.id %></h2>
+    <h2 class="customer-title">Customer No. <%= @customer.id %></h2><br>
 
     <table>
         <tr>
@@ -27,7 +27,7 @@
         <tr>
             <th> Actions </th>
             <td>
-                <%= link_to 'Edit', edit_customer_path %>
+                <%= link_to 'Edit', edit_customer_path %> | 
                 <%= link_to 'Delete', delete_customer_path %>
             </td>
         </tr>

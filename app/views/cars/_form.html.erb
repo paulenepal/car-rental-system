@@ -28,7 +28,8 @@
         <%= form.text_field :plate_number %>
     </p>
 
-    <p>
-        <%= form.submit "Submit" %>
-    </p>
+    <div class="button">
+        <%= form.submit "Submit" %> <%= link_to 'Back to Car List', cars_path %>
+    </div>
+
 <% end %>

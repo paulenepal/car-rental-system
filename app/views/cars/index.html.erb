@@ -1,12 +1,19 @@
 <div class="content">
 
+    <% if flash[:alert].present? %>
+        <div>
+            <%= flash[:alert] %>
+        </div>
+    <% end %>
+
     <h3 class="notice"><%= notice %></h3>
-    <h2 class="content-title">Car List</h2>
+    <h2 class="content-title">Car List</h2><br>
 
     <table>
         <thead>
             <tr>
-                <th>ID</th>
+                <th class="actions">Info</th>
+                <th class="actions">ID</th>
                 <th>Make</th>
                 <th>Car Model</th>
                 <th>Plate Number</th>
@@ -17,14 +24,22 @@
         <tbody>
         <% @cars.each do |car| %>
             <tr>
-                <td><%= car.id %></td>
+                <td class="actions">
+                    <%= link_to car_path(car) do %>
+                        <i class="fa-solid fa-bars" style="color: #1B4242;"></i>
+                    <% end %>
+                </td>
+                <td class="actions"><%= car.id %></td>
                 <td><%= car.make %></td>
                 <td><%= car.model %></td>
                 <td><%= car.plate_number %></td>
                 <td class="actions">
-                    <%= link_to 'Show', car_path(car) %>
-                    <%= link_to 'Edit', edit_car_path(car) %>
-                    <%= link_to 'Delete', delete_car_path(car) %>
+                    <%= link_to edit_car_path(car) do %>
+                        <i class="fa-solid fa-pen-to-square" style="color: #5C8374;"></i>
+                    <% end %>
+                    <%= link_to delete_car_path(car) do %>
+                        <i class="fa-solid fa-delete-left" style="color: #9b031f;"></i>
+                    <% end %>
                 </td>
             </tr>
         

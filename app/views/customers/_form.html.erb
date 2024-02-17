@@ -33,7 +33,8 @@
         <%= form.text_field :contact_number %>
     </p>
 
-    <p>
-        <%= form.submit "Submit", class: "button" %>
-    </p>
+    <div class="button">
+        <%= form.submit "Submit", class: "button" %> <%= link_to 'Back to Customer List', customers_path %>
+    </div>
+    
 <% end %>

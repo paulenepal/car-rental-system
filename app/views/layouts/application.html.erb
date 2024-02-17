@@ -11,27 +11,27 @@
   </head>
 
   <body>
-    <header id="header">
-      <%= image_tag('logo.png', class: 'logo') %>
-      <nav id="topnav">
-        <span><%= link_to 'CARS', cars_path %></span>
-        <span><%= link_to 'CUSTOMERS', customers_path %></span>
-        <span><%= link_to 'RENTALS', rentals_path %></span>
-        <span>Welcome, Admin!</span>
-      </nav>
-    </header>
+    <nav id="header">
+      <label class="logo">RailsRides.</label>
+      <ul id="topnav">
+        <li><span><%= link_to 'CARS', cars_path %></span></li>
+        <li><span><%= link_to 'CUSTOMERS', customers_path %></span></li>
+        <li><span><%= link_to 'RENTALS', rentals_path %></span></li>
+        <li><span>Welcome, Admin!</span></li>
+      </ul>
+    </nav>
 
-    <div id="container">
+    <div class="container">
       <section class="main-box1">
         <div id="title">
-          <h1>Toyota Yaris Cross</h1>
-          <h3>Electrify Your <span>Passions</span></h3>
+          <h1>Ruby on Wheels</h1>
+          <h3>RailsRides. <span>Drive the Gem Route.</span></h3>
         </div>
         <div id="description">
           <%= image_tag('yar.png', class: 'img') %>
           <%= image_tag('yar2.png', class: 'img2') %>
-          <p class="desc1">PROVIDING <span>SUSTAINABILITY</span> 
-            AND <span>VERSATILITY</span> IN ONE <strong>SUBCOMPACT SUV</strong></p>
+          <p class="desc1">CHOOSE TO <span>DRIVE</span> 
+            INTO THE <strong>FUTURE.</strong></p>
         </div>
       </section>
 
@@ -46,6 +46,7 @@
           <%= yield %>
         </section>
       </section>
+    </div>
 
   </body>
 </html>
